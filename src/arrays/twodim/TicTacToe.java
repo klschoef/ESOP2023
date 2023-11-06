@@ -6,6 +6,12 @@ import java.util.Scanner;
 
 public class TicTacToe {
     public static void main(String[] args) {
+        /*
+            IMPORTANT NOTICE:
+            This project requires CodeDraw.jar!
+            Add it in File -> Project Structure -> Libraries -> + (use lib/CodeDraw.jar)
+         */
+
         final int width = 600, height = 600;
         final int cSize = width / 3, rSize = height / 3, margin = 40;
 
@@ -28,7 +34,6 @@ public class TicTacToe {
 
         cd.setLineWidth(4.0);
         boolean playerOneTurn = true;
-
         boolean gameEnded = false;
         while (!gameEnded) {
 
@@ -39,6 +44,7 @@ public class TicTacToe {
                 x = scanner.nextInt();
             } while (x >= 3 || y >= 3 || x < 0 || y < 0 || f[y][x] != 0);
 
+            //f[y][x] = playerOneTurn ? P1 : P2;
             if (playerOneTurn) {
                 f[y][x] = P1;
             } else {
@@ -66,18 +72,17 @@ public class TicTacToe {
             }
 
             cd.show();
-            playerOneTurn = !playerOneTurn;
+            playerOneTurn = !playerOneTurn; //change P1 <-> P2
 
             //check win situation
             for (int i = 0; i < 3; i++) {
-                //rows or cols equal?
+                //rows or cols with equal values (except 0, which is empty)?
                 if (f[i][0] != 0 && f[i][0] == f[i][1] && f[i][1] == f[i][2] ||
-                        f[0][i] != 0 && f[0][i] == f[1][i] && f[1][i] == f[2][i]) {
+                    f[0][i] != 0 && f[0][i] == f[1][i] && f[1][i] == f[2][i]) {
                     gameEnded = true;
                     break;
                 }
             }
-
             //check diagonals
             if (f[0][0] != 0 && f[0][0] == f[1][1] && f[1][1] == f[2][2] ||
                 f[0][2] != 0 && f[0][2] == f[1][1] && f[1][1] == f[2][0]) {
