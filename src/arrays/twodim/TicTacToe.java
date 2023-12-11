@@ -1,4 +1,4 @@
-package arrays.twodim;
+/*package arrays.twodim;
 
 import codedraw.CodeDraw;
 
@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class TicTacToe {
     public static void main(String[] args) {
-        /*
-            IMPORTANT NOTICE:
-            This project requires CodeDraw.jar!
-            Add it in File -> Project Structure -> Libraries -> + (use lib/CodeDraw.jar)
-         */
+        //
+        //    IMPORTANT NOTICE:
+        //    This project requires CodeDraw.jar!
+        //    Add it in File -> Project Structure -> Libraries -> + (use lib/CodeDraw.jar)
+        //
 
         final int width = 600, height = 600;
         final int cSize = width / 3, rSize = height / 3, margin = 40;
@@ -94,3 +94,4 @@ public class TicTacToe {
         cd.show();
     }
 }
+*/
